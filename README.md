@@ -1,5 +1,7 @@
 # final_project
 
+### Group Member: Martina Garabedian and Yu Xia
+
 ## The Big Idea
 The project idea is to build a random color generator that can generate and display a random color palette of 5. If time allows, we are planning to also take input of either RGB code or a color name to return a color palette that matches the color. Through this project, we are able to learn how to convert between color names and RGB. 
 
