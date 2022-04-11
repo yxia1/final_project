@@ -7,5 +7,8 @@ print(generated[0])
 
 
 def color_to_rgb(color_name):
-    """takes a color name and returns a rgb"""
+    """
+    takes a color name and returns a rgb
+    reference: https://data-flair.training/blogs/project-in-python-colour-detection/
+    """
     pass
