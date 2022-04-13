@@ -5,6 +5,22 @@ results = response.json()
 generated = results['result']
 print(generated)
 
+def read_txt_to_dict():
+    """
+    The function open the txt file and read it into a dictionary with the color name as keys and rgb as values
+    """
+    f = open('data/colors.txt')
+    d = dict()
+    
+    for line in f:
+        row = line.strip()
+        color = row.split(',')
+        color_name= color[0]
+        d[color_name] = list(map(int, color[3:]))
+    return d
+
+print(read_txt_to_dict())
+
 def clean_input(user_input):
     """
     the function takes a user_input of rgb as a list and returns the input that the colormind API accepts
@@ -15,20 +31,20 @@ def clean_input(user_input):
     data = {}
     data.keys = "input"
     data.keys = "model"
-    data["input"] = 
+
+
 
 def get_palette(clean_input):
     """
     this function takes the clean input and post it to the colormind api to get the generated API
     """
+    pass
 
 def rgb_to_hex(rgb):
     """
     This function takes a rgb color and returns its hex code.
     """
     return f'#''%02x%02x%02x' % rgb
-print(rgb_to_hex((255, 255, 195)))
-
 
 def color_to_rgb(color_name):
     """
@@ -39,6 +55,6 @@ def color_to_rgb(color_name):
 
 def get_palette(rgb):
     """
-    the function takes an input of rgb 
+    the function takes an input of rgb and return the color palette from colormind
     """
-# 
+    pass
