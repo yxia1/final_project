@@ -343,7 +343,7 @@ gray,"Gray",#808080,128,128,128
 gray_asparagus,"Gray-Asparagus",#465945,70,89,69
 gray_html_css_gray,"Gray (Html/Css Gray)",#808080,128,128,128
 gray_x11_gray,"Gray (X11 Gray)",#bebebe,190,190,190
-green_color_wheel_x11_green,"Green (Color Wheel) (X11 Green)",#0f0,0,255,0
+green,"Green",#0f0,0,255,0
 green_crayola,"Green (Crayola)",#1cac78,28,172,120
 green_html_css_green,"Green (Html/Css Green)",#008000,0,128,0
 green_munsell,"Green (Munsell)",#00a877,0,168,119
