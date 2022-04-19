@@ -1,10 +1,15 @@
+import json
+from unittest import result
+import urllib.parse
+import urllib.request
+
 import requests
 
 data = '{"input":[[44,43,44],"N","N","N","N"],"model":"default"}'
 response = requests.post("http://colormind.io/api/", data=data)
 results = response.json()
 generated = results["result"]
-print(generated)
+
 
 # 1. convert color name into rgb
 def read_txt_to_dict():
@@ -19,6 +24,9 @@ def read_txt_to_dict():
         color = row.split(",")
         color_name = color[0]
         d[color_name] = list(map(int, color[3:]))
+    d["green"] = [0, 255, 0]
+    d["purple"] = [125, 0, 125]
+    d["orange"] = [255, 215, 0]
     return d
 
 def convert_input(input):
@@ -35,39 +43,58 @@ def convert_input(input):
 
 # 2. Generate color palette
 ## Communication with API Part
-def clean_API_input(user_input):
+def clean_API_input(rgb_value):
     """
-    the function takes a user_input of rgb as a list and returns the input that the colormind API accepts
+    The function takes a user_input of rgb as a list and returns the input that the colormind API accepts
     ie.'{"input":[[44,43,44],"N","N","N","N"],"model":"default"}'
     string of a dictionary
     """
-    user_input = list(user_input)
-    data = {}
-    data.keys = "input"
-    data.keys = "model"
+    data_dict = {}
+    
+    data_dict["input"] = [rgb_value, "N","N","N","N"]
+    data_dict["model"] = "default"
+    # print(data_dict)
+    
+    return data_dict
 
 
-def get_palette(clean_API_input):
+def post_color(clean_API_input):
     """
-    this function takes the clean input and post it to the colormind api to get the generated API
+    This function takes the clean input and post it to the colormind API to get the generated API
     """
-    pass
+    
+    url = "http://colormind.io/api/"
+    data = json.dumps(clean_API_input)
+    data = bytes(data.encode("utf-8"))
+    req = urllib.request.Request(url, data, method="POST")
+    with urllib.request.urlopen(req) as response:
+        response_text = response.read().decode('utf-8')
+        j = json.loads(response_text)
+    return j
+
+
 
 # 3. where everything comes together
 
-def final(color_name):
+def get_palette(color_name):
     """
     return whatever we nee
     """
+    color_dict = read_txt_to_dict()
+    rgb_input = color_dict[convert_input(color_name)]
+
+    palette_input = clean_API_input(rgb_input)
+    palette = post_color(palette_input)
+    result = palette["result"]
+    # colors = (result[0], result[1], result[2], result[3], result[4])
+    return result
 
 
 def main():
     """
     You can test all the functions here
     """
-    color_dict = read_txt_to_dict()
-    print(color_dict[convert_input('green')])
-
+    print(get_palette("beige"))
 
 
 if __name__ == "__main__":
