@@ -4,17 +4,20 @@ import urllib.parse
 import urllib.request
 
 import requests
+import json
+import urllib.parse
+import urllib.request
 
-data = '{"input":[[44,43,44],"N","N","N","N"],"model":"default"}'
-response = requests.post("http://colormind.io/api/", data=data)
-results = response.json()
-generated = results["result"]
-
+# data = '{"input":[[44,43,44],"N","N","N","N"],"model":"default"}'
+# response = requests.post("http://colormind.io/api/", data=data)
+# results = response.json()
+# generated = results["result"]
+# print(generated)
 
 # 1. convert color name into rgb
 def read_txt_to_dict():
     """
-    The function open the txt file and read it into a dictionary with the color name as keys and rgb as values
+    Thиs function opens a txt file containing all color information. Then it reads it into a dictionary with the color names as keys and rgb as values.
     """
     f = open("data/colors.txt")
     d = dict()
@@ -29,13 +32,15 @@ def read_txt_to_dict():
     d["orange"] = [255, 215, 0]
     return d
 
-def convert_input(input):
+def convert_input(user_input):
     """
-    this function takes out the blank space in users' input and makes it lower cases to match with the color dictionary keys
+    This function converts the user color input into a usable format. 
     """
-    input = input.lower()
-    input = input.replace(" ", "_")
-    return input
+    # try and except might be helpful
+    # raise errors
+    user_input = user_input.lower()
+    user_input = user_input.replace(" ", "_")
+    return user_input
 
 #_____________________________________
 # TO DO:
@@ -78,7 +83,7 @@ def post_color(clean_API_input):
 
 def get_palette(color_name):
     """
-    return whatever we nee
+    Return a matching palette.
     """
     color_dict = read_txt_to_dict()
     rgb_input = color_dict[convert_input(color_name)]
