@@ -4,14 +4,28 @@ from colormind_helper import get_palette
 
 app = Flask(__name__)
 
-@app.route('/')
+
+@app.route("/")
 def index():
     return render_template("index.html")
 
 
+@app.route("/color/", methods=["GET", "POST"])
 
-if __name__ == '__main__':
+def generate_palette():
+    # if request.mathod == "POST":
+    #     color_name = request.form["color"]
+    #     generated_palette = get_palette(color_name)
+
+    #     return render_template("color_result.html",
+    #     color1=generated_palette[0],
+    #     color2=generated_palette[1],
+    #     color3=generated_palette[2],
+    #     color4=generated_palette[3],
+    #     color5=generated_palette[4])
+
+    return render_template("color_form.html")
+
+
+if __name__ == "__main__":
     app.run(debug=True)
-
-
-
