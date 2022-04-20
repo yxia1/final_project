@@ -77,7 +77,12 @@ def post_color(clean_API_input):
         j = json.loads(response_text)
     return j
 
-
+def rgb_to_hex(rgb):
+    """
+    This function takes a rgb color as a list and returns its hex code.
+    """
+    rgb = tuple(rgb)
+    return f"#" "%02x%02x%02x" % rgb
 
 # 3. where everything comes together
 
@@ -91,15 +96,19 @@ def get_palette(color_name):
     palette_input = clean_API_input(rgb_input)
     palette = post_color(palette_input)
     result = palette["result"]
-    # colors = (result[0], result[1], result[2], result[3], result[4])
-    return result
+    hex_result = []
+    for color in result:
+        hex = rgb_to_hex(color)
+        hex_result.append(hex)
+    return hex_result
 
 
 def main():
     """
     You can test all the functions here
     """
-    print(get_palette("beige"))
+    print(get_palette("hot pink"))
+
 
 
 if __name__ == "__main__":
@@ -109,10 +118,3 @@ if __name__ == "__main__":
 # Unused bits:
 #_____________________________________
 
-
-def rgb_to_hex(rgb):
-    """
-    This function takes a rgb color and returns its hex code.
-    """
-    # might need this for html
-    return f"#" "%02x%02x%02x" % rgb

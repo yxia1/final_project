@@ -13,16 +13,16 @@ def index():
 @app.route("/color/", methods=["GET", "POST"])
 
 def generate_palette():
-    # if request.mathod == "POST":
-    #     color_name = request.form["color"]
-    #     generated_palette = get_palette(color_name)
+    if request.method == "POST":
+        color_name = request.form["color"]
+        generated_palette = get_palette(color_name)
 
-    #     return render_template("color_result.html",
-    #     color1=generated_palette[0],
-    #     color2=generated_palette[1],
-    #     color3=generated_palette[2],
-    #     color4=generated_palette[3],
-    #     color5=generated_palette[4])
+        return render_template("color_result.html",
+        color1=generated_palette[0],
+        color2=generated_palette[1],
+        color3=generated_palette[2],
+        color4=generated_palette[3],
+        color5=generated_palette[4])
 
     return render_template("color_form.html")
 
