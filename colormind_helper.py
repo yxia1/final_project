@@ -27,7 +27,7 @@ def read_txt_to_dict():
         color = row.split(",")
         color_name = color[0]
         d[color_name] = list(map(int, color[3:]))
-    d["green"] = [0, 255, 0]
+    # d["green"] = [0, 255, 0]
     d["purple"] = [125, 0, 125]
     d["orange"] = [255, 215, 0]
     return d

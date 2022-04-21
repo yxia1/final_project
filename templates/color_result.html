@@ -14,6 +14,7 @@
         body{
           background-color: rgb(255, 237, 222);
         }
+
         #check{
           background-color:rgb(192, 32, 59);
           color:whitesmoke;
@@ -34,13 +35,19 @@
         .result_text{
           text-align:center;
         }
+        :root {
+          --main-bg-color: {{color1}};
+        } 
+
         </style>
 </head>
+
+
 
 <body>
     <h1 style="font-family: sans-serif;">Random Color Generation</h1>
         <br>
-        <div class = "result_bar" style="background-color: #fb71c4">
+        <div class = "result_bar" style="background-color: var(--main-bg-color)">
           <p id = "result_text">{{color1}}</p>
         </div>
         <div class = "result_bar" style="background-color: #dfa197">

@@ -9,7 +9,6 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-
 @app.route("/color/", methods=["GET", "POST"])
 
 def generate_palette():
@@ -25,6 +24,11 @@ def generate_palette():
         color5=generated_palette[4])
 
     return render_template("color_form.html")
+
+@app.route("/app")
+
+def about():
+    return render_template("about.html")
 
 
 if __name__ == "__main__":
