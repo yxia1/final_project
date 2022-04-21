@@ -12,7 +12,7 @@
          font-size: big;
         }
         body{
-          background-color: rgb(255, 237, 222);
+          background-color: whitesmoke;
         }
 
         #check{
@@ -36,7 +36,11 @@
           text-align:center;
         }
         :root {
-          --main-bg-color: {{color1}};
+          --color1: {{color1}};
+          --color2: {{color2}};
+          --color3: {{color3}};
+          --color4: {{color4}};
+          --color5: {{color5}};
         } 
 
         </style>
@@ -47,19 +51,19 @@
 <body>
     <h1 style="font-family: sans-serif;">Random Color Generation</h1>
         <br>
-        <div class = "result_bar" style="background-color: var(--main-bg-color)">
+        <div class = "result_bar" style="background-color: var(--color1)">
           <p id = "result_text">{{color1}}</p>
         </div>
-        <div class = "result_bar" style="background-color: #dfa197">
+        <div class = "result_bar" style="background-color: var(--color2)">
           <p id = "result_text">{{color2}}</p>
         </div>
-        <div class = "result_bar" style="background-color: #b8a899">
+        <div class = "result_bar" style="background-color: var(--color3)">
           <p id = "result_text">{{color3}}</p>
         </div>
-        <div class = "result_bar "style="background-color: #7a958b">
+        <div class = "result_bar "style="background-color: var(--color4)">
           <p id = "result_text">{{color4}}</p>
         </div>
-        <div class = "result_bar" style="background-color: #77857e">
+        <div class = "result_bar" style="background-color: var(--color5)">
           <p id = "result_text">{{color5}}</p>
         </div>
 
