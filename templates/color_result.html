@@ -12,7 +12,7 @@
          font-size: big;
         }
         body{
-          background-color: whitesmoke;
+          background-color: rgb(255, 237, 222);
         }
 
         #check{
@@ -35,6 +35,11 @@
         .result_text{
           text-align:center;
         }
+        .space {
+          width: 4px;
+          height: auto;
+          display: inline-block;
+        }
         :root {
           --color1: {{color1}};
           --color2: {{color2}};
@@ -49,25 +54,29 @@
 
 
 <body>
-    <h1 style="font-family: sans-serif;">Random Color Generation</h1>
+    <h1 style="font-family: sans-serif; color: #2E1114">Random Color Generation</h1>
         <br>
         <div class = "result_bar" style="background-color: var(--color1)">
-          <p id = "result_text">{{color1}}</p>
+          <p style="font-family: sans-serif; font-weight:bold; color: whitesmoke" id = "result_text">{{color1}}</p>
         </div>
         <div class = "result_bar" style="background-color: var(--color2)">
-          <p id = "result_text">{{color2}}</p>
+          <p style="font-family: sans-serif; font-weight:bold; color: whitesmoke" id = "result_text">{{color2}}</p>
         </div>
         <div class = "result_bar" style="background-color: var(--color3)">
-          <p id = "result_text">{{color3}}</p>
+          <p style="font-family: sans-serif; font-weight:bold; color: whitesmoke" id = "result_text">{{color3}}</p>
         </div>
         <div class = "result_bar "style="background-color: var(--color4)">
-          <p id = "result_text">{{color4}}</p>
+          <p style="font-family: sans-serif; font-weight:bold; color: whitesmoke" id = "result_text">{{color4}}</p>
         </div>
         <div class = "result_bar" style="background-color: var(--color5)">
-          <p id = "result_text">{{color5}}</p>
+          <p style="font-family: sans-serif; font-weight:bold; color: whitesmoke" id = "result_text">{{color5}}</p>
         </div>
 
-
+        <div class="space">
+        </div>
+        <div style="text-align:center">
+        <button onClick="window.location.reload()" style="background-color: rgb(192, 32, 59);color: whitesmoke; border-radius: 5px; border-color: rgb(118, 19, 35); width:125px;height:55px; font-weight:bold;">Refresh Palette</button>
+        </div>
 
     </form>
 </body>

@@ -19,7 +19,7 @@ def read_txt_to_dict():
     """
     Thиs function opens a txt file containing all color information. Then it reads it into a dictionary with the color names as keys and rgb as values.
     """
-    f = open("data/colors.txt")
+    f = open("./data/colors.txt")
     d = dict()
 
     for line in f:
@@ -91,16 +91,19 @@ def get_palette(color_name):
     Return a matching palette.
     """
     color_dict = read_txt_to_dict()
-    rgb_input = color_dict[convert_input(color_name)]
+    try: 
+        rgb_input = color_dict[convert_input(color_name)]
 
-    palette_input = clean_API_input(rgb_input)
-    palette = post_color(palette_input)
-    result = palette["result"]
-    hex_result = []
-    for color in result:
-        hex = rgb_to_hex(color)
-        hex_result.append(hex)
-    return hex_result
+        palette_input = clean_API_input(rgb_input)
+        palette = post_color(palette_input)
+        result = palette["result"]
+        hex_result = []
+        for color in result:
+            hex = rgb_to_hex(color)
+            hex_result.append(hex)
+        return hex_result
+    except:
+        "There is no such color"
 
 
 def main():
