@@ -16,14 +16,18 @@ def generate_palette():
         color_name = request.form["color"]
         generated_palette = get_palette(color_name)
 
-        return render_template("color_result.html",
-        color1=generated_palette[0],
-        color2=generated_palette[1],
-        color3=generated_palette[2],
-        color4=generated_palette[3],
-        color5=generated_palette[4])
-
-    return render_template("color_form.html")
+        if generate_palette:
+            return render_template("color_result.html",
+            color1=generated_palette[0],
+            color2=generated_palette[1],
+            color3=generated_palette[2],
+            color4=generated_palette[3],
+            color5=generated_palette[4])
+        else:
+            # return "There is no such color."
+            return render_template("color_form.html", error=True)
+    
+    return render_template("color_form.html", error=None)
 
 @app.route("/app")
 

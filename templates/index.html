@@ -8,6 +8,7 @@
         body {
           margin: 0;
           font-family: sans-serif;
+          background-color: rgb(255, 244, 235);
         }
         
         .topnav {
@@ -25,13 +26,20 @@
         }
         
         .topnav a:hover {
-          background-color: rgb(254, 251, 245);
+          background-color: rgb(255, 237, 222);
           color: gray;
         }
         
         .topnav a.active {
           background-color: rgb(118, 19, 35);
-          color: rgb(254, 251, 245);
+          color: rgb(255, 237, 222);
+        }
+
+        .center {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 40.5%;
         }
         </style>
     <title>Color Palette Generated</title>
@@ -44,8 +52,10 @@
 </div>
 
 <div style="padding-left:16px">
-  <h2>Generate a Color Palette</h2>
-  <p>Some content..</p>
+  <!-- <h2 style="color: #2E1114"> Generate a Color Palette</h2> -->
+  <!-- <p> <br /> </p>
+  <p>Some content..</p> -->
+  <p><img src="{{url_for('static', filename='splash_text.png')}}" class="center"></p>
 </div>
 
 </body>
