@@ -17,7 +17,7 @@ Colors are all around us. But sometimes it is hard to imagine the perfect color 
 
 - Home page describing the main function of the website
 - Color page where users can input the name of their main color for the palette
-- Result page with a generated color palette consisting of five colors
+- Result page with a generated color palette consisting of five colors and their respective HEX code
 
 
 

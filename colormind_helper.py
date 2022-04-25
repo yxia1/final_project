@@ -30,6 +30,7 @@ def read_txt_to_dict():
     # d["green"] = [0, 255, 0]
     d["purple"] = [125, 0, 125]
     d["orange"] = [255, 215, 0]
+    d["brown"] = [150, 75, 0]
     return d
 
 def convert_input(user_input):

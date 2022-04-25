@@ -1,5 +1,5 @@
 # from crypt import methods
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash
 from colormind_helper import get_palette
 
 app = Flask(__name__)
@@ -25,8 +25,9 @@ def generate_palette():
             color5=generated_palette[4])
         else:
             # return "There is no such color."
+            flash('Looks like this color is not available :(')
             return render_template("color_form.html", error=True)
-    
+            
     return render_template("color_form.html", error=None)
 
 @app.route("/app")
