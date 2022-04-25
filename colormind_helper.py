@@ -104,7 +104,7 @@ def get_palette(color_name):
             hex_result.append(hex)
         return hex_result
     except:
-        return "There is no such color. Try other color names similar to {color_name}."
+      return "There is no such color. Try other color names similar to {color_name}."
 
 
 def main():

@@ -25,7 +25,7 @@ def generate_palette():
             color5=generated_palette[4])
         else:
             # return "There is no such color."
-            flash('Looks like this color is not available :(')
+            # flash('Looks like this color is not available :(')
             return render_template("color_form.html", error=True)
             
     return render_template("color_form.html", error=None)
