@@ -31,7 +31,7 @@ def generate_palette():
             
     return render_template("color_form.html", error=None)
 
-@app.route("/app")
+@app.route("/about")
 
 def about():
     return render_template("about.html")

@@ -5,8 +5,149 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+          margin: 0;
+          font-family: sans-serif;
+          background-color: rgb(255, 244, 235);
+        }
+        
+        .topnav {
+          overflow: hidden;
+          background-color: white;
+        }
+        
+        .topnav a {
+          float: left;
+          color: gray;
+          text-align: center;
+          padding: 16px 32px;
+          text-decoration: none;
+          font-size: 11px;
+        }
+        
+        .topnav a:hover {
+          background-color: rgb(255, 237, 222);
+          color: gray;
+        }
+        
+        .topnav a.active {
+          background-color: rgb(118, 19, 35);
+          color: rgb(255, 237, 222);
+        }
+
+        .center {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 40.5%;
+        }
+        
+        html {
+          box-sizing: border-box;
+        }
+        
+        *, *:before, *:after {
+          box-sizing: inherit;
+        }
+        
+        .column {
+          float: left;
+          width: 33.3%;
+          margin-bottom: 16px;
+          padding: 0 8px;
+        }
+        
+        .card {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          margin: 8px;
+        }
+        
+        .about-section {
+          padding: 50px;
+          text-align: center;
+          background-color: rgb(118, 19, 35);
+          color: white;
+        }
+        
+        .container {
+          padding: 0 16px;
+        }
+        
+        .container::after, .row::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+        
+        .title {
+          color: grey;
+        }
+        
+        .button {
+          border: none;
+          outline: 0;
+          display: inline-block;
+          padding: 8px;
+          color: whitesmoke;
+          background-color: rgb(192, 32, 59);
+          text-align: center;
+          cursor: pointer;
+          width: 100%;
+        }
+        
+        .button:hover {
+          background-color: rgb(254, 251, 245);
+          color: gray;
+        }
+        
+        @media screen and (max-width: 650px) {
+          .column {
+            width: 100%;
+            display: block;
+          }
+        }
+        </style>
+        </head>
+        <body>
+        
+        <div class="about-section">
+          <h1>About ColorPal Team</h1>
+          <p>ColorPal was developed by two Babson College students - Carrie & Martina.</p>
+          <p>The purpose of ColorPal, however, is bigger than a college project. Our mission is to build beautiful colors palettes for YOUR projects and inspire creativity. </p>
+        </div>
+        
+        <h2 style="text-align:center">Our Team</h2>
+        <div class="row">
+          <div class="column">
+            <div class="card">
+              <img src="/static/carrie.jfif" alt="Carrie" style="width:100%">
+              <div class="container">
+                <h2>Carrie Xia</h2>
+                <p class="title">Co-Founder</p>
+                <p>Carrie is a Junior at Babson College with a passion for design. Her inspiration is creating a more colorful world.</p>
+                <p>yxia1@babson.edu</p>
+                <p><button class="button">Contact</button></p>
+              </div>
+            </div>
+          </div>
+        
+          <div class="column">
+            <div class="card">
+              <img src="/static/martina.JPG" alt="Martina" style="width:100%">
+              <div class="container">
+                <h2>Martina Garabedian</h2>
+                <p class="title">Co-Founder</p>
+                <p>Martina is a Senior at Babson College. She loves painting with watercolors and she is passionate about digitizing art.</p>
+                <p>mgarabedian1@babson.edu</p>
+                <p><button class="button">Contact</button></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        </body>
+        </html>
+        
 </head>
 <body>
-    
-</body>
-</html>
