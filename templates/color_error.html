@@ -72,15 +72,12 @@
   <a class="active" href="">HOME</a>
   <a href="color">COLOR</a>
   <a href="about">ABOUT</a>
-  </div>
+</div>
   <h1 style="font-family: sans-serif; color:#2E1114">Random Color Generation</h1>
   <p> <br /> </p>
   <form action="" method="post">
-      <label for="" style="color: #2E1114";><b>Enter a Color Name/Hex Code:</b> <input type="text" name="color"></label>
+      <label for="" style="color: #2E1114";><b>Enter a Color Name:</b> <input type="text" name="color"></label>
       <button id = "check">Generate</button>
   </form>
-  {% if error %}
-  <p style="color:rgb(118, 19, 35)">The color name is not in our database. You can enter the hex code for the refered color.</p>
-  {% endif %}
 </body>
 </html>

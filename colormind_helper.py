@@ -7,7 +7,7 @@ import requests
 import json
 import urllib.parse
 import urllib.request
-
+import re
 # data = '{"input":[[44,43,44],"N","N","N","N"],"model":"default"}'
 # response = requests.post("http://colormind.io/api/", data=data)
 # results = response.json()
@@ -77,13 +77,21 @@ def post_color(clean_API_input):
         response_text = response.read().decode('utf-8')
         j = json.loads(response_text)
     return j
-
+def valid_hex(hex):
+    if re.search(r'^#(?:[0-9a-fA-F]{3}){1,2}$',hex) is not None:
+        return True
+    return False
 def rgb_to_hex(rgb):
     """
     This function takes a rgb color as a list and returns its hex code.
     """
     rgb = tuple(rgb)
     return f"#" "%02x%02x%02x" % rgb
+
+def hex_to_rgb(value):
+    value = value.lstrip('#')
+    lv = len(value)
+    return list(int(value[i:i + lv // 3], 16) for i in range(0, lv, lv // 3))
 
 # 3. where everything comes together
 
@@ -92,8 +100,9 @@ def get_palette(color_name):
     Return a matching palette.
     """
     color_dict = read_txt_to_dict()
-    try: 
-        rgb_input = color_dict[convert_input(color_name)]
+    converted_input= convert_input(color_name)
+    if converted_input in color_dict: 
+        rgb_input = color_dict[converted_input]
 
         palette_input = clean_API_input(rgb_input)
         palette = post_color(palette_input)
@@ -103,15 +112,28 @@ def get_palette(color_name):
             hex = rgb_to_hex(color)
             hex_result.append(hex)
         return hex_result
-    except:
-      return "There is no such color. Try other color names similar to {color_name}."
+    elif valid_hex(color_name):
+        rgb_input = hex_to_rgb(color_name)
+        palette_input = clean_API_input(rgb_input)
+        palette = post_color(palette_input)
+        result = palette["result"]
+        hex_result = []
+        for color in result:
+            hex = rgb_to_hex(color)
+            hex_result.append(hex)
+        return hex_result
+    else:
+      return None
 
 
 def main():
     """
     You can test all the functions here
     """
-    print(get_palette("hot pink"))
+    print(get_palette("pink"))
+    print(re.search(r'^#(?:[0-9a-fA-F]{3}){1,2}$','#ffffff'))
+
+
 
 
 
