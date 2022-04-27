@@ -58,7 +58,7 @@ from flask import Flask, render_template, request
 [About](https://colorpal-co.herokuapp.com/about)
 
 <div align="center">
-  <img width="460" height="300" src="https://www.kindpng.com/picc/m/39-399083_thank-you-png-transparent-png.png">
+  <a href="https://www.transparentpng.com/details/thank-you-icon-clipart_20316.html" target="_blank">thank you Icon clipart @transparentpng.com</a>
 </div>
 
 ![ColorPal](/static/Thank-You.png)
