@@ -50,9 +50,13 @@ from flask import Flask, render_template, request
 ```
 ## Running the Website
 
-Just run the ```app.py``` file, click the local server and begin your ColorPal journey.
+- Server Running: just run the ```app.py``` file, click the local server and begin your ColorPal journey. You could use the bar at the top to hoover over the three tabs. Click on "ABOUT US" and you could see more information about the authors. Please, return with the back arrow before you proceed. Click on "COLOR" and input the name of your color or the HEX code. Then click "Generate" and a color palette will appear. 
 
-!!!!! ADD HEROKU INFO
+- Web Running: we implemented a [Heroku](https://www.heroku.com/) website which is available online without running the Python code. Please, follow the links below: 
+[Home](https://colorpal-co.herokuapp.com/)
+[Color Generator](https://colorpal-co.herokuapp.com/color/)
+[About](https://colorpal-co.herokuapp.com/about)
+
 
 
 ![ColorPal](/static/Thank-You.png)
